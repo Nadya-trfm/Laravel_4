@@ -15,7 +15,7 @@ return new class extends Migration
     {
 
         Schema::table('rating', function (Blueprint $table) {
-            $table->foreignId('review_id')->references('id')->on('review');
+            $table->foreignId('review_id')->references('id')->on('review')->nullable();
         });
     }
 
@@ -26,6 +26,6 @@ return new class extends Migration
      */
     public function down()
     {
-        //
+       Schema::dropIfExists('rating');
     }
 };

@@ -15,7 +15,9 @@ return new class extends Migration
     {
         Schema::create('review', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('rating_id')->references('id')->on('rating');
+            $table->foreignId('user_id')->references('id')->on('user');
+            $table->foreignId('product_id')->references('id')->on('product');
+            $table->foreignId('rating_id')->references('id')->on('rating')->nullable();
             $table->string('text');
             $table->integer('useful');
             $table->timestamps();
