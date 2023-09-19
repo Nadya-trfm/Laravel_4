@@ -20,7 +20,7 @@ class ReviewSeeder extends Seeder
             for ($i = 0; $i < 20; $i++) {
                 DB::table('review')->insert([
                     'user_id' => random_int(1, 30),
-                    'product_id' => $i,
+                    'product_id' => $i+1,
                     'text' => Str::random(10),
                     'useful'=> random_int(5, 100)
                 ]);

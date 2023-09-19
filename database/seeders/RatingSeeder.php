@@ -18,9 +18,9 @@ class RatingSeeder extends Seeder
     {
         for($j = 0; $j < 10; $j++){
             for ($i = 0; $i < 20; $i++) {
-                DB::table('review')->insert([
+                DB::table('rating')->insert([
                     'user_id' => random_int(1, 30),
-                    'product_id' => $i,
+                    'product_id' => $i+1,
                     'stars'=> random_int(1, 10)
                 ]);
             }
