@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\PageController;
 use App\Http\Controllers\SeederController;
 use Illuminate\Support\Facades\Route;
 
@@ -16,4 +17,5 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', [SeederController::class, 'index']);
 
+Route::resource('pages', PageController::class);
 
